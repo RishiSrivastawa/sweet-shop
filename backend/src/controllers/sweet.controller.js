@@ -9,4 +9,9 @@ const addSweet = async (req, res) => {
   }
 };
 
-module.exports = { addSweet };
+const getSweets = async (req, res) => {
+  const sweets = await Sweet.find({});
+  return res.status(200).json(sweets);
+};
+
+module.exports = { addSweet, getSweets };

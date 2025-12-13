@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const authMiddleware = require("../middleware/auth.middleware");
+const { getSweets } = require("../controllers/sweet.controller");
 
-router.get("/", authMiddleware, (req, res) => {
-  res.json([]);
-});
+router.get("/", authMiddleware, getSweets);
 
 module.exports = router;
