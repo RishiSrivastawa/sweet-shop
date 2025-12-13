@@ -10,8 +10,15 @@ const addSweet = async (req, res) => {
 };
 
 const getSweets = async (req, res) => {
-  const sweets = await Sweet.find({});
+  const filter = {};
+
+  if (req.query.category) {
+    filter.category = req.query.category;
+  }
+
+  const sweets = await Sweet.find(filter);
   return res.status(200).json(sweets);
 };
+
 
 module.exports = { addSweet, getSweets };
