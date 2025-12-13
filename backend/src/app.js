@@ -6,4 +6,8 @@ app.use(express.json());
 const authRoutes = require("./routes/auth.routes");
 app.use("/api/auth", authRoutes);
 
+const sweetRoutes = require("./routes/sweet.routes");
+app.use("/api/sweets", sweetRoutes);
+
+
 module.exports = app;
