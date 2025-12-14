@@ -1,5 +1,10 @@
 # 🍬 Sweet Shop Management System
-
+(
+https://sweet-shop-puce.vercel.app/
+For admin login:-
+Email- srivastawarishi@gmail.com
+Pass- 123123 
+)
 A full-stack Sweet Shop Management System built using **Test-Driven Development (TDD)**.  
 The application allows users to browse and purchase sweets, while admins can manage inventory securely.
 
