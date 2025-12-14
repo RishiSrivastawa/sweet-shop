@@ -79,6 +79,31 @@ sweet-shop/
 └── README.md
 ```
 
+### Screenshots
+## 🖼 Screenshots
+
+### 🍭 Login
+![Login](Screenshots/Screenshot%202025-12-14%20211350.png)
+
+### 🛒 Purchase Flow
+![Purchase](Screenshots/Screenshot%202025-12-14%20211518.png)
+
+### 👑 Restock
+![Restock](Screenshots/Screenshot%202025-12-14%20211722.png)
+
+### 👑 Admin Panel
+![Admin Panel](Screenshots/Screenshot%202025-12-14%20211708.png)
+
+### 📦 Inventory Management
+![Inventory](Screenshots/Screenshot%202025-12-14%20211713.png)
+
+### 📊 Backend TDD
+
+![Test1](Screenshots/Screenshot%202025-12-14%20211306.png)
+![Test2](Screenshots/Screenshot%202025-12-14%20211257.png)
+![Test3](Screenshots/Screenshot%202025-12-14%20211248.png)
+![Test4](Screenshots/Screenshot%202025-12-14%20211317.png)
+
 
 ---
 
