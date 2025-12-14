@@ -1,7 +1,17 @@
+require("dotenv").config();
+const mongoose = require("mongoose");
 const request = require("supertest");
 const app = require("../../src/app");
 const Sweet = require("../../src/models/Sweet");
 const { getAuthToken } = require("../helpers/auth.helper");
+
+beforeAll(async () => {
+  await mongoose.connect(process.env.MONGO_URI);
+});
+
+afterAll(async () => {
+  await mongoose.connection.close();
+});
 
 beforeEach(async () => {
   await Sweet.deleteMany({});

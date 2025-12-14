@@ -20,5 +20,19 @@ const getSweets = async (req, res) => {
   return res.status(200).json(sweets);
 };
 
+const purchaseSweet = async (req, res) => {
+  const sweet = await Sweet.findById(req.params.id);
 
-module.exports = { addSweet, getSweets };
+  if (!sweet || sweet.quantity === 0) {
+    return res.status(400).json({ error: "Sweet not available" });
+  }
+
+  sweet.quantity -= 1;
+  await sweet.save();
+
+  return res.status(200).json(sweet);
+};
+
+
+
+module.exports = { addSweet, getSweets, purchaseSweet };
