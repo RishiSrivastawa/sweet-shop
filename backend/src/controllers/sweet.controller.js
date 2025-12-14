@@ -33,6 +33,25 @@ const purchaseSweet = async (req, res) => {
   return res.status(200).json(sweet);
 };
 
+const updateSweet = async (req, res) => {
+  try {
+    const sweet = await Sweet.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+
+    if (!sweet) {
+      return res.status(404).json({ error: "Sweet not found" });
+    }
+
+    return res.status(200).json(sweet);
+  } catch (err) {
+    return res.status(400).json({ error: "Invalid data" });
+  }
+};
 
 
-module.exports = { addSweet, getSweets, purchaseSweet };
+
+
+module.exports = { addSweet, getSweets, purchaseSweet, updateSweet };
