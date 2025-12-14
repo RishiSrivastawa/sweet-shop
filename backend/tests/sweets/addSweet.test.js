@@ -3,10 +3,26 @@ const mongoose = require("mongoose");
 const request = require("supertest");
 const app = require("../../src/app");
 const Sweet = require("../../src/models/Sweet");
-const { getAuthToken } = require("../helpers/auth.helper");
+const User = require("../../src/models/User");
+const jwt = require("jsonwebtoken");
+
+let adminToken;
 
 beforeAll(async () => {
   await mongoose.connect(process.env.MONGO_URI);
+
+  await User.deleteMany({});
+
+  const adminUser = await User.create({
+    email: "admin@test.com",
+    password: "hashed",
+    role: "ADMIN",
+  });
+
+  adminToken = jwt.sign(
+    { userId: adminUser._id },
+    process.env.JWT_SECRET
+  );
 });
 
 afterAll(async () => {
@@ -17,12 +33,10 @@ beforeEach(async () => {
   await Sweet.deleteMany({});
 });
 
-it("should allow authenticated user to add a sweet", async () => {
-  const token = await getAuthToken();
-
+it("should allow admin user to add a sweet", async () => {
   const res = await request(app)
     .post("/api/sweets")
-    .set("Authorization", `Bearer ${token}`)
+    .set("Authorization", `Bearer ${adminToken}`)
     .send({
       name: "Jalebi",
       category: "Indian",
