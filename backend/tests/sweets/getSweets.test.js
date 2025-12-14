@@ -8,7 +8,9 @@ const jwt = require("jsonwebtoken");
 
 describe("GET /api/sweets", () => {
   let token;
-
+  beforeEach(async () => {
+  await mongoose.connection.db.dropDatabase();
+  });
   beforeAll(async () => {
     await mongoose.connect(process.env.MONGO_URI);
 
