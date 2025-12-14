@@ -79,8 +79,9 @@ sweet-shop/
 └── README.md
 ```
 
-### Screenshots
-## 🖼 Screenshots
+
+
+### 🖼 Screenshots
 
 ### 🍭 Login
 ![Login](Screenshots/Screenshot%202025-12-14%20211350.png)
@@ -180,8 +181,6 @@ Jest test suites cover:
     Admin-only access
 
 All tests pass successfully.
-
-### 🖼 Screenshots
 
 ### 🤖 My AI Usage
 
